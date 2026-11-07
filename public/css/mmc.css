@@ -1,0 +1,842 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+@font-face {
+  font-family: "Rogue";
+  src: url("/fonts/Rogue.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Shows fallback font until custom font loads */
+}
+
+:root {
+  --ink: #17211b;
+  --paper: #f3efe5;
+  --mint: #ffe1e2
+  --coral2: #ef684c;
+  --coral: #ff3a40;
+  --yellow: #f8c957;
+  --line: rgba(23, 33, 27, 0.16);
+}
+.header .wrap {
+  border: 0;
+  width: 90%;
+}
+.mmc-new {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Manrope, sans-serif;
+  overflow: hidden;
+}
+h1,
+h2,
+h3 {
+  font-family: "Rogue", sans-serif;
+  letter-spacing: 0;
+  font-weight: unset !important;
+}
+.mmc-wrap {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 28px;
+}
+.mmc-eyebrow {
+  color: var(--coral);
+  font: 500 11px "DM Mono", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mmc-btn {
+  background: var(--coral);
+  border: 1px solid var(--coral);
+  color: #fff;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 18px;
+  padding: 17px 20px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.mmc-btn:hover {
+  background: #d95138;
+  color: #fff;
+  transform: translateY(-3px);
+}
+.mmc-btn span {
+  font-size: 14px;
+  font-weight: 400;
+}
+.mmc-hero {
+  background: var(--mint);
+  min-height: 800px;
+}
+.mmc-hero-carousel {
+  min-height: 800px;
+  overflow: hidden;
+  position: relative;
+}
+.mmc-hero-carousel > .carousel {
+  height: 800px;
+}
+.mmc-hero-carousel .carousel-inner,
+.mmc-hero-carousel .carousel-item {
+  height: 100%;
+}
+.mmc-hero-carousel .carousel-item::after {
+  background: linear-gradient(
+    90deg,
+    rgba(23, 33, 27, 0.9),
+    rgba(23, 33, 27, 0.42) 75%,
+    rgba(23, 33, 27, 0.12)
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+.mmc-hero-carousel .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+.mmc-carousel-overlay {
+  color: #fff;
+  inset: 0;
+  position: absolute;
+  z-index: 2;
+}
+.mmc-carousel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 800px;
+  padding-bottom: 70px;
+  padding-top: 70px;
+}
+.mmc-carousel-content .mmc-eyebrow {
+  color: var(--yellow);
+}
+.mmc-carousel-content .mmc-meta {
+  margin-top: 18px;
+}
+.mmc-carousel-content h1 {
+  font-size: clamp(58px, 8vw, 122px);
+  line-height: 0.84;
+  margin: 25px 0 28px;
+}
+.mmc-carousel-content h1 em {
+  color: var(--yellow);
+  font-style: normal;
+}
+.mmc-carousel-content p {
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0 0 32px;
+  max-width: 500px;
+}
+.mmc-carousel-content .mmc-btn {
+  align-self: flex-start;
+}
+.mmc-hero-grid {
+  align-items: center;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 0.85fr;
+  min-height: 800px;
+  padding-bottom: 70px;
+  padding-top: 70px;
+}
+.mmc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  font: 500 11px "DM Mono", monospace;
+  gap: 8px 22px;
+  text-transform: uppercase;
+}
+.mmc-hero h1 {
+  font-size: 100px;
+  line-height: 0.84;
+  margin: 25px 0 8px;
+  color: #fff;
+  max-width: 600px;
+}
+.mmc-hero h2 {
+  color: var(--coral);
+  font-size: 30px;
+  line-height: 31px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 8px 8px 1px;
+  display: inline-block;
+  max-width: 73px;
+}
+.mmc-hero h1 em {
+  color: var(--coral);
+  font-style: normal;
+}
+.mmc-hero h1 span {
+  font-family: "Space Grotesk", sans-serif;
+}
+.mmc-hero .shadow {
+  position: absolute;
+  left: 30%;
+  top: 23%;
+  font-size: 600px;
+  opacity: 0.13;
+  letter-spacing: -21px;
+  color: red;
+}
+.mmc-hero p {
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 500px;
+  margin: 0 0 32px;
+  color: #fff;
+}
+.mmc-art {
+  height: 500px;
+  position: relative;
+}
+.mmc-art img {
+  height: 440px;
+  object-fit: cover;
+  width: 78%;
+}
+.mmc-stamp {
+  align-items: center;
+  background: var(--yellow);
+  border-radius: 50%;
+  display: flex;
+  font: 700 16px/1.1 "Space Grotesk";
+  height: 140px;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 40px;
+  transform: rotate(11deg);
+  width: 140px;
+}
+.mmc-number {
+  bottom: 0;
+  color: var(--coral);
+  font: 700 180px/0.75 "Space Grotesk";
+  left: -25px;
+  position: absolute;
+}
+.mmc-caption {
+  bottom: 15px;
+  font: 500 10px/1.3 "DM Mono";
+  max-width: 130px;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+}
+.mmc-ticker {
+  background: var(--ink);
+  color: var(--yellow);
+  font: 500 12px "DM Mono";
+  overflow: hidden;
+  padding: 16px 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.mmc-ticker span {
+  margin-right: 36px;
+}
+.mmc-nav {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.mmc-nav .mmc-wrap {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 61px;
+}
+.mmc-nav strong {
+  font: 700 14px "Space Grotesk";
+}
+.mmc-nav a {
+  color: var(--ink);
+  font: 500 11px "DM Mono";
+  margin-left: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.mmc-section {
+  padding: 105px 0;
+}
+.mmc-intro {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: 0.75fr 1.25fr;
+}
+.mmc-intro h2,
+.mmc-section h2 {
+  font-size: 50px;
+  line-height: 0.9;
+  margin: 15px 0;
+}
+.mmc-copy {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 800px;
+}
+.mmc-copy p {
+  margin: 0 0 20px;
+}
+.mmc-stats {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
+}
+.mmc-stat {
+  border-right: 1px solid var(--line);
+  padding: 20px 20px 0 0;
+}
+.mmc-stat + .mmc-stat {
+  padding-left: 20px;
+}
+.mmc-stat:last-child {
+  border: 0;
+}
+.mmc-stat b {
+  display: block;
+  font: 700 42px "Space Grotesk";
+  margin-bottom: 10px;
+}
+.mmc-stat small {
+  font: 500 10px "DM Mono";
+  text-transform: uppercase;
+}
+.mmc-wrap2 {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.mmc-band {
+  background: var(--coral);
+  color: #fff;
+  padding: 100px 0;
+}
+.mmc-band-head {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+.mmc-band h2 {
+  margin: 14px 0 0;
+  font-size: 30px;
+  color: #fff;
+}
+.mmc-band .mmc-eyebrow {
+  color: var(--yellow);
+}
+.mmc-highlights {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(8, 1fr);
+}
+.mmc-highlight {
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  min-height: 175px;
+  padding: 22px;
+}
+.mmc-highlight img {
+  display: block;
+  height: 34px;
+  margin-bottom: 22px;
+  object-fit: contain;
+  object-position: left center;
+  width: 34px;
+}
+.mmc-highlight b {
+  display: block;
+  font: 100 37px "Rogue";
+  margin-bottom: 16px;
+  color: #f2ebeb;
+}
+.mmc-highlight span {
+  font-size: 14px;
+  line-height: 1.3;
+}
+.mmc-focus-head p span {
+  display: block;
+  font-size: 19px;
+  color: var(--coral);
+  font-weight: 700;
+  margin: 5px 0px;
+  padding-top: 20px;
+}
+.mmc-focus-head {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 50px;
+}
+.mmc-focus-head p {
+  line-height: 1.6;
+  max-width: 480px;
+}
+.mmc-sectors {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.mmc-sector {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  min-height: 155px;
+  padding: 22px;
+}
+.mmc-sector:nth-child(3n) {
+  border-right: 0;
+}
+.mmc-sector b {
+  color: var(--coral);
+  display: block;
+  font: 500 12px "DM Mono";
+  margin-bottom: 48px;
+}
+.mmc-sector span {
+  font: 600 19px "Space Grotesk";
+}
+.mmc-session {
+  background: var(--paper);
+  padding: 105px 0;
+}
+.mmc-session-head {
+  align-items: end;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 50px;
+}
+.mmc-session-head h2 {
+  font-size: clamp(40px, 5vw, 70px);
+  line-height: 0.9;
+  margin: 15px 0 0;
+}
+.mmc-session-head p {
+  line-height: 1.6;
+  max-width: 480px;
+}
+.mmc-video-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.mmc-video {
+  background: var(--ink);
+  color: #fff;
+  padding: 12px;
+}
+.mmc-video-frame {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.mmc-video-frame iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+.mmc-video h3 {
+  font: 600 18px "Space Grotesk";
+  margin: 18px 8px 8px;
+}
+.mmc-partners {
+  background: #fff;
+  padding: 105px 0;
+}
+.mmc-partners-head {
+  align-items: end;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 65px;
+}
+.mmc-partners-head h2 {
+  font-size: clamp(40px, 5vw, 70px);
+  line-height: 0.9;
+  margin: 14px 0 0;
+}
+.mmc-partners-head p {
+  line-height: 1.6;
+  max-width: 480px;
+}
+.mmc-logo-group + .mmc-logo-group {
+  border-top: 1px solid var(--line);
+  margin-top: 70px;
+  padding-top: 45px;
+}
+.mmc-logo-group h3 {
+  color: var(--coral);
+  font: 500 12px "DM Mono";
+  letter-spacing: 0.12em;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+.mmc-logo-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(8, 1fr);
+}
+.mmc-logo {
+  align-items: center;
+  background: var(--paper);
+  display: flex;
+  height: 125px;
+  justify-content: center;
+  padding: 18px;
+}
+.mmc-logo img {
+  display: block;
+  filter: grayscale(1);
+  max-height: 75px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: filter 0.2s, transform 0.2s;
+}
+.mmc-logo:hover img {
+  filter: grayscale(0);
+  transform: scale(1.04);
+}
+.mmc-tickets {
+  background: #fff;
+  padding: 105px 0;
+}
+.mmc-tickets-head {
+  text-align: center;
+}
+.mmc-tickets-head h2 {
+  font-size: 50px;
+  margin: 14px 0 35px;
+}
+.mmc-ticket-note {
+  margin: -28px 0 35px;
+}
+.mmc-ticket-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.mmc-ticket {
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  min-height: 375px;
+  padding: 25px;
+}
+.mmc-ticket.mmc-featured {
+  background: var(--ink);
+  color: #fff;
+}
+.mmc-ticket h3 {
+  font-size: 20px;
+  margin: 10px 0 10px;
+}
+.mmc-ticket.mmc-featured h3,
+.mmc-ticket.mmc-featured p {
+  color: #fff;
+}
+.mmc-price {
+  font: 700 28px "Space Grotesk";
+  margin-bottom: 12px;
+}
+.mmc-price del {
+  font: 500 14px "DM Mono";
+  opacity: 0.55;
+}
+.mmc-ticket p,
+.mmc-ticket li {
+  font-size: 12px;
+  line-height: 1.5;
+  padding-bottom: 7px;
+}
+.mmc-ticket ul {
+  border-top: 1px solid var(--line);
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 17px 0;
+}
+.mmc-ticket.mmc-featured ul {
+  border-top: 1px solid #ffffff61;
+}
+.mmc-ticket li {
+  margin-bottom: 10px;
+  padding-left: 17px;
+  position: relative;
+}
+.mmc-ticket li:before {
+  color: var(--coral);
+  content: "+";
+  left: 0;
+  position: absolute;
+}
+.mmc-ticket .mmc-btn {
+  margin-top: auto;
+  width: max-content;
+}
+.mmc-close {
+  background: var(--coral);
+  padding: 95px 0;
+  color: #fff;
+}
+.mmc-close-grid {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+}
+.mmc-close h2 {
+  font-size: 70px;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: 30px 0 30px;
+  max-width: 700px;
+  color: #fff;
+}
+.mmc-close .mmc-eyebrow {
+  color: #fff;
+}
+.mmc-note {
+  font: 500 11px/1.5 "DM Mono";
+  max-width: 190px;
+  text-transform: uppercase;
+}
+@media (max-width: 800px) {
+  .mmc-wrap {
+    padding: 0 20px;
+  }
+  .mmc-hero-carousel,
+  .mmc-hero-carousel > .carousel {
+    min-height: 620px;
+    height: 700px;
+  }
+  .mmc-carousel-content {
+    min-height: 620px;
+    padding-bottom: 45px;
+    padding-top: 45px;
+  }
+  .mmc-carousel-content h1 {
+    font-size: clamp(54px, 15vw, 84px);
+  }
+  .mmc-carousel-content p {
+    font-size: 16px;
+    max-width: 390px;
+  }
+  .mmc-hero-grid {
+    gap: 45px;
+    grid-template-columns: 1fr;
+    padding-bottom: 65px;
+    padding-top: 65px;
+  }
+  .mmc-art {
+    height: 370px;
+  }
+  .mmc-art img {
+    height: 320px;
+  }
+  .mmc-number {
+    font-size: 130px;
+  }
+  .mmc-nav a {
+    margin-left: 9px;
+  }
+  .mmc-nav a:nth-child(-n + 2) {
+    display: none;
+  }
+  .mmc-section,
+  .mmc-band,
+  .mmc-session,
+  .mmc-tickets,
+  .mmc-close {
+    padding: 70px 0;
+  }
+  .mmc-intro,
+  .mmc-focus-head,
+  .mmc-partners-head {
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+  .mmc-logo-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .mmc-highlights,
+  .mmc-ticket-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mmc-video-grid {
+    grid-template-columns: 1fr;
+  }
+  .mmc-session-head {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .mmc-sectors {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mmc-sector:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+  .mmc-sector:nth-child(2n) {
+    border-right: 0;
+  }
+  .mmc-close-grid {
+    align-items: start;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .mmc-logo-group + .mmc-logo-group {
+    border-top: 1px solid var(--line);
+    margin-top: 25px;
+    padding-top: 25px;
+  }
+  .owl-dots {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .mmc-hero h1 {
+    font-size: 50px;
+  }
+  .mmc-intro h2,
+  .mmc-section h2 {
+    font-size: 35px;
+  }
+  .mmc-highlights,
+  .mmc-sectors,
+  .mmc-logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mmc-intro {
+    gap: 0px;
+    grid-template-columns: 1fr;
+  }
+  img.parallax {
+    display: block;
+    width: 100%;
+    height: 440px;
+  }
+  .mmc-ticket-grid {
+    grid-template-columns: 1fr;
+  }
+  .mmc-sector {
+    border-right: 0 !important;
+    padding-left: 0;
+    min-height: 115px;
+  }
+  .mmc-stats {
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .mmc-stat b {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+  .mmc-session {
+    padding: 30px 0 70px 0;
+  }
+  .mmc-stat,
+  .mmc-stat + .mmc-stat {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+    padding: 18px 10px;
+  }
+  #about {
+    padding-bottom: 40px;
+  }
+  .mmc-sector span {
+    font: 600 18px "Space Grotesk";
+    letter-spacing: -1px;
+  }
+}
+img.parallax {
+  display: block;
+  width: 100%;
+  height: 690px;
+  object-fit: cover;
+  object-position: bottom;
+  transform: translate3d(0, 0, 0) scale(1.08);
+  transform-origin: center center;
+  will-change: transform;
+}
+.mmc-parallax-frame {
+  overflow: hidden;
+}
+@media (max-width: 800px), (prefers-reduced-motion: reduce) {
+  img.parallax {
+    transform: none;
+    will-change: auto;
+    height: 370px;
+  }
+}
+@media (max-width: 480px) {
+  .mmc-band .mmc-btn{
+    width: 170px;
+    gap:0
+  }
+  .mmc-wrap2 {
+    padding: 0 0px;
+}
+    .mmc-highlight b {
+        display: block;
+        font: 100 21px "Rogue";
+        margin-bottom: 7px;
+    }.mmc-highlight img {
+    display: block;
+    height: 25px;
+    margin-bottom: 22px;
+    object-fit: contain;
+    object-position: left center;
+    width: 25px;
+}    
+.mmc-highlights{
+        grid-template-columns: repeat(3, 1fr);
+    }
+  .mmc-focus-head {
+    gap: 0;
+  }
+  .mmc-focus-head p span {
+    margin: 0px 0px 5px;
+    padding-top: 0px;
+  }
+  .mmc-sector b {
+    margin-bottom: 5px;
+  }
+  .mmc-tickets-head h2 {
+    font-size: 35px;
+  }
+  .mmc-ticket h3 {
+    font-size: 17px;
+  }
+  .mmc-price {
+    font: 700 25px "Space Grotesk";
+    margin-bottom: 12px;
+  }
+  .mmc-close h2,
+  .mmc-session-head h2 {
+    font-size: 35px;
+    line-height: 1.1;
+  }
+  .mmc-highlight {
+    min-height: 150px;
+  }
+}
+.footer {
+  clip-path: none;
+}
+.footer ul li i,
+.footer a {
+  color: var(--coral) !important;
+}
+@media (max-width: 1350px) {
+  .header .wrap {
+    border: 0;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 5%;
+  }
+}
