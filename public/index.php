@@ -1,20 +1,44 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Http\Request;
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 
-define('LARAVEL_START', microtime(true));
-
-// Determine if the application is in maintenance mode...
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-    require $maintenance;
+if (!is_string($requestPath)) {
+    http_response_code(400);
+    exit('Bad request');
 }
 
-// Register the Composer autoloader...
-require __DIR__.'/../vendor/autoload.php';
+if (PHP_SAPI === 'cli-server' && $requestPath !== '/') {
+    $requestedFile = realpath(__DIR__ . $requestPath);
 
-// Bootstrap Laravel and handle the request...
-/** @var Application $app */
-$app = require_once __DIR__.'/../bootstrap/app.php';
+    if (
+        is_string($requestedFile)
+        && str_starts_with($requestedFile, __DIR__ . DIRECTORY_SEPARATOR)
+        && is_file($requestedFile)
+    ) {
+        return false;
+    }
+}
 
-$app->handleRequest(Request::capture());
+$routes = [
+    '/' => ['home.php', 'Six Nurturing Home Limited'],
+    '/about' => ['about.php', 'About us | Six Nurturing Home Limited'],
+    '/services' => ['services.php', 'Our services | Six Nurturing Home Limited'],
+    '/our-approach' => ['approach.php', 'Our approach | Six Nurturing Home Limited'],
+    '/careers' => ['careers.php', 'Careers | Six Nurturing Home Limited'],
+    '/contact' => ['contact.php', 'Contact us | Six Nurturing Home Limited'],
+];
+
+$requestPath = rtrim($requestPath, '/') ?: '/';
+
+if (!isset($routes[$requestPath])) {
+    http_response_code(404);
+    $pageTitle = 'Page not found | Six Nurturing Home Limited';
+    $currentPage = '';
+    require __DIR__ . '/views/404.php';
+    exit;
+}
+
+[$page, $pageTitle] = $routes[$requestPath];
+$currentPage = pathinfo($page, PATHINFO_FILENAME);
+
+require __DIR__ . '/views/' . $page;
